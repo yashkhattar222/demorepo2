@@ -1,0 +1,26 @@
+<template>
+  <lightning-card title="Get Account Details">
+    <lightning-input
+      label="Enter Account ID"
+      value={accountid}
+      onchange={handleInput}
+    >
+    </lightning-input>
+
+    <lightning-button
+      label="Fetch Account"
+      onclick={handleClick}
+      class="slds-m-top_small"
+    >
+    </lightning-button>
+
+    <template if:true={account}>
+      <p><strong>ID:</strong> {account.Id}</p>
+      <p><strong>Name:</strong> {account.Name}</p>
+    </template>
+
+    <template if:true={error}>
+      <p style="color: red">{error.body.message}</p>
+    </template>
+  </lightning-card>
+</template>

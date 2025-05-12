@@ -1,0 +1,17 @@
+<template>
+  <lightning-card title="Account Records">
+    <template if:true={contacts}>
+      <ul>
+        <template for:each={contacts} for:item="acc">
+          <li key={acc.Id}>
+            <hr />
+          </li>
+        </template>
+      </ul>
+    </template>
+
+    <template if:true={error}>
+      <p class="slds-text-color_error">{error}</p>
+    </template>
+  </lightning-card>
+</template>
